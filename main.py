@@ -5,7 +5,7 @@ from nltk.classify import apply_features
 import random
 
 def gender_features(word):
-    return {'last_letter': word[-1], 'length': len(word), 'first_letter': word[0], 'last_two_letter': word[-2:]}
+    return {'suffix1': word[-1], 'suffix2': word[-2:], 'length': len(word), 'first_letter': word[0]}
 
 def gender_features_overfitting(name):
     features = {}
@@ -21,12 +21,27 @@ if __name__ == '__main__':
     names = ([(name, 'male') for name in names.words('male.txt')] + [(name, 'female') for name in names.words('female.txt')])
     random.shuffle(names)
 
-    # feature를 뽑고 NB를 훈련시킴
-#    featuresets = [(gender_features(n), g) for (n, g) in names]
-#    train_set, test_set = featuresets[500:], featuresets[:500]    # 이러면 메모리를 많이 소비함
-    train_set = apply_features(gender_features, names[500:])
-    test_set = apply_features(gender_features, names[:500])
+    # error analysis를 위해 이름 셋을 나눔
+    train_names = names[1500:]
+    devtest_names = names[500:1500]
+    test_names = names[:500]
     
+    # train set 생성
+    train_set = [(gender_features(n), g) for (n, g) in train_names]
+    devtest_set = [(gender_features(n), g) for (n, g) in devtest_names]
+    test_set = [(gender_features(n), g) for (n, g) in test_names]
+    
+    # NB 훈련
     classifier = nltk.NaiveBayesClassifier.train(train_set)
+    
     print nltk.classify.accuracy(classifier, test_set)
-    classifier.show_most_informative_features(5)
+    
+    # error analysis
+    errors = []
+    for (name, tag) in devtest_names:
+        guess = classifier.classify(gender_features(name))
+        if guess != tag:
+            errors.append((tag, guess, name))
+            
+    for (tag, guess, name) in sorted(errors):
+        print 'correct=%-8s guess=%-8s name=%-30s' % (tag, guess, name)
