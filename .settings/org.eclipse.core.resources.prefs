@@ -3,3 +3,4 @@ encoding/dialogue.py=utf-8
 encoding/document.py=utf-8
 encoding/gender.py=utf-8
 encoding/sents.py=utf-8
+encoding/textual_entailment.py=utf-8
