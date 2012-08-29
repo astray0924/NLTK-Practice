@@ -1,7 +1,11 @@
 eclipse.preferences.version=1
+encoding/ambiguous_grammar.py=utf-8
+encoding/cfg.py=utf-8
 encoding/decision_tree.py=utf-8
 encoding/dialogue.py=utf-8
 encoding/document.py=utf-8
 encoding/gender.py=utf-8
+encoding/grammar_feature.py=utf-8
+encoding/recursive_descent_parser.py=utf-8
 encoding/sents.py=utf-8
 encoding/textual_entailment.py=utf-8
