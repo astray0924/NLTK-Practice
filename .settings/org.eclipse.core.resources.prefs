@@ -5,7 +5,11 @@ encoding/decision_tree.py=utf-8
 encoding/dialogue.py=utf-8
 encoding/document.py=utf-8
 encoding/gender.py=utf-8
+<<<<<<< HEAD
 encoding/grammar_feature.py=utf-8
 encoding/recursive_descent_parser.py=utf-8
+=======
+encoding/ie.py=utf-8
+>>>>>>> 3be14a9ed967c3826d4064bfe68bf99baf2ca97b
 encoding/sents.py=utf-8
 encoding/textual_entailment.py=utf-8
