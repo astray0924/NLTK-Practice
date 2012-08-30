@@ -1,15 +1,17 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=3be14a9ed967c3826d4064bfe68bf99baf2ca97b
 eclipse.preferences.version=1
 encoding/ambiguous_grammar.py=utf-8
 encoding/cfg.py=utf-8
 encoding/decision_tree.py=utf-8
 encoding/dialogue.py=utf-8
 encoding/document.py=utf-8
+encoding/feature_based_chart_parser.py=utf-8
+encoding/feature_based_grammar.py=utf-8
 encoding/gender.py=utf-8
-<<<<<<< HEAD
 encoding/grammar_feature.py=utf-8
-encoding/recursive_descent_parser.py=utf-8
-=======
 encoding/ie.py=utf-8
->>>>>>> 3be14a9ed967c3826d4064bfe68bf99baf2ca97b
+encoding/recursive_descent_parser.py=utf-8
 encoding/sents.py=utf-8
 encoding/textual_entailment.py=utf-8
